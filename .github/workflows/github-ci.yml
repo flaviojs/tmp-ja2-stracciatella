@@ -1,6 +1,11 @@
 name: GitHub CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master, nightly ]
+    tags: "*"
+  pull_request:
+    types: [ opened, synchronize, reopened ]
 
 jobs:
   ci-build:
